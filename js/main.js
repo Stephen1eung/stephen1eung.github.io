@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', closeMobileMenu);
     });
 
-    const activateTab = (newTab) => {
+    const activateTab = (newTab, options = {}) => {
         if (!newTab) return;
+        const { shouldScroll = true } = options;
 
         const targetId = newTab.getAttribute('aria-controls');
 
@@ -45,6 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         closeMobileMenu();
+
+        if (shouldScroll) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     };
 
     tabButtons.forEach(tab => {
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Ensure default tab state
-    activateTab(tabButtons.find(tab => tab.getAttribute('aria-selected') === 'true') || tabButtons[0]);
+    activateTab(tabButtons.find(tab => tab.getAttribute('aria-selected') === 'true') || tabButtons[0], { shouldScroll: false });
 
     // Add shadow to header on scroll
     window.addEventListener('scroll', () => {

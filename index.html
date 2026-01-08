@@ -32,11 +32,16 @@
     <!-- Hero Section -->
     <section id="home" class="hero tab-section active" role="tabpanel" aria-labelledby="tab-home" aria-hidden="false">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Stephen Leung</span></h1>
-                <h2>Full Stack Developer</h2>
-                <p>Building digital experiences that matter</p>
-                <a href="#contact" class="cta-button">Get In Touch</a>
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1>Hi, I'm <span class="highlight">Stephen Leung</span></h1>
+                    <h2>Full Stack Developer</h2>
+                    <p>Building digital experiences that matter</p>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+                <div class="hero-media">
+                    <img src="https://via.placeholder.com/520x520/1e3a8a/ffffff?text=Portfolio+Preview" class="placeholder-image hero-placeholder" alt="Abstract placeholder representing a digital product mockup">
+                </div>
             </div>
         </div>
     </section>
@@ -45,20 +50,66 @@
     <section id="about" class="about tab-section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="true">
         <div class="container">
             <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate developer with expertise in creating responsive and user-friendly web applications. I love turning ideas into reality through code and constantly learning new technologies to improve my craft.</p>
-                    <div class="skills">
-                        <h3>Skills</h3>
-                        <ul class="skills-list">
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Node.js</li>
-                            <li>Python</li>
-                            <li>Git & GitHub</li>
-                        </ul>
+            <div class="about-layout">
+                <article class="about-summary">
+                    <figure class="about-figure">
+                        <img src="https://via.placeholder.com/420x420/0f172a/ffffff?text=Stephen+Leung" class="placeholder-image portrait" alt="Placeholder portrait of Stephen Leung">
+                    </figure>
+                    <div class="about-summary-body">
+                        <h3>Summary</h3>
+                        <p>I'm a product-minded engineer who thrives on pairing thoughtful design with resilient code. From rapid prototypes to production-ready platforms, I translate ideas into approachable solutions that scale.</p>
+                        <div class="skills">
+                            <h4>Core Skills</h4>
+                            <ul class="skills-list">
+                                <li>HTML5 &amp; CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>React.js</li>
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>Git &amp; GitHub</li>
+                            </ul>
+                        </div>
                     </div>
+                </article>
+                <div class="about-grid">
+                    <article class="about-card">
+                        <figure class="about-card-media">
+                            <img src="https://via.placeholder.com/320x220/1e3a8a/ffffff?text=Work+Experience" class="placeholder-image" alt="Work experience placeholder graphic">
+                        </figure>
+                        <div class="about-card-body">
+                            <h3>Work Experience</h3>
+                            <ul class="work-experience-list">
+                                <li><span class="role">Senior Frontend Engineer</span> @ Productive Labs — Crafted component systems and design tooling for a distributed SaaS platform.</li>
+                                <li><span class="role">Full Stack Developer</span> @ Launch Collective — Led feature squads building data-rich dashboards for Fortune 500 clients.</li>
+                                <li><span class="role">Community Mentor</span> — Guided early-career developers through project-based learning cohorts.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="about-card">
+                        <figure class="about-card-media">
+                            <img src="https://via.placeholder.com/320x220/0f172a/ffffff?text=Hobbies" class="placeholder-image" alt="Hobbies placeholder graphic">
+                        </figure>
+                        <div class="about-card-body">
+                            <h3>Hobbies</h3>
+                            <p>Offline you'll find me sketching interface ideas, analyzing NBA box scores, and exploring new hiking trails for the perfect sunrise coffee stop.</p>
+                            <ul class="tag-list">
+                                <li>Sketching UI concepts</li>
+                                <li>Pick-up basketball</li>
+                                <li>Trail running</li>
+                                <li>Third-wave coffee</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="about-card cat-card">
+                        <figure class="about-card-media">
+                            <img src="https://via.placeholder.com/320x220/facc15/111827?text=Mochi+the+Cat" class="placeholder-image" alt="Cat placeholder representing Mochi the cat">
+                        </figure>
+                        <div class="about-card-body">
+                            <h3>My Cat</h3>
+                            <p>Meet Mochi, the curious tabby who supervises every late-night deployment. She's the resident QA lead, ensuring laptops stay warm and morale stays high.</p>
+                            <p class="cat-note">Fun fact: Mochi has a knack for walking across keyboards right as CI turns green.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -71,37 +122,37 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/2563eb/ffffff?text=Project+1" alt="Project 1">
+                        <img src="https://via.placeholder.com/600x400/0f172a/ffffff?text=NBA+Analysis" alt="NBA data visualization placeholder">
                     </div>
                     <div class="project-info">
-                        <h3>Project 1</h3>
-                        <p>A brief description of the project and the technologies used. Highlight the problem it solves.</p>
+                        <h3>NBA Analysis</h3>
+                        <p>An interactive analytics lab that surfaces advanced metrics, shot charts, and lineup efficiencies to help coaches and fans break down every possession.</p>
                         <div class="project-links">
                             <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                         <div class="project-tags">
                             <span>React</span>
-                            <span>Node.js</span>
-                            <span>MongoDB</span>
+                            <span>D3.js</span>
+                            <span>Python</span>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/1e40af/ffffff?text=Project+2" alt="Project 2">
+                        <img src="https://via.placeholder.com/600x400/1e40af/ffffff?text=Xpired" alt="Xpired product placeholder">
                     </div>
                     <div class="project-info">
-                        <h3>Project 2</h3>
-                        <p>Another project description showcasing your skills and the impact of your work.</p>
+                        <h3>Xpired</h3>
+                        <p>A sustainability-focused pantry tracker that sends gentle nudges before ingredients expire, complete with recipe suggestions to reduce waste.</p>
                         <div class="project-links">
                             <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                         <div class="project-tags">
-                            <span>JavaScript</span>
+                            <span>TypeScript</span>
                             <span>Express</span>
-                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
                         </div>
                     </div>
                 </div>
