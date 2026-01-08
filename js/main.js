@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-links li');
+    const tabButtons = Array.from(document.querySelectorAll('.nav-links a[role="tab"]'));
+    const tabPanels = Array.from(document.querySelectorAll('.tab-section'));
 
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
@@ -13,55 +15,77 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
+    const closeMobileMenu = () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
     // Close mobile menu when clicking on a nav link
     navLinksItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
+        item.addEventListener('click', closeMobileMenu);
+    });
+
+    const activateTab = (newTab) => {
+        if (!newTab) return;
+
+        const targetId = newTab.getAttribute('aria-controls');
+
+        tabButtons.forEach(tab => {
+            const isActive = tab === newTab;
+            tab.setAttribute('aria-selected', isActive);
+            tab.setAttribute('tabindex', isActive ? '0' : '-1');
+            tab.classList.toggle('active', isActive);
+        });
+
+        tabPanels.forEach(panel => {
+            const isTarget = panel.id === targetId;
+            panel.classList.toggle('active', isTarget);
+            panel.setAttribute('aria-hidden', !isTarget);
+        });
+
+        closeMobileMenu();
+    };
+
+    tabButtons.forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            event.preventDefault();
+            activateTab(event.currentTarget);
+        });
+
+        tab.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+
+            event.preventDefault();
+            const currentIndex = tabButtons.indexOf(event.currentTarget);
+            const offset = event.key === 'ArrowRight' ? 1 : -1;
+            const nextIndex = (currentIndex + offset + tabButtons.length) % tabButtons.length;
+            const nextTab = tabButtons[nextIndex];
+            nextTab.focus();
+            activateTab(nextTab);
         });
     });
 
-    // Smooth scrolling for anchor links
+    // Enable tab activation from other in-page links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+        anchor.addEventListener('click', (event) => {
+            const targetId = anchor.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+
+            const linkedTab = tabButtons.find(tab => tab.getAttribute('href') === targetId);
+            if (linkedTab) {
+                event.preventDefault();
+                activateTab(linkedTab);
+                linkedTab.focus();
             }
         });
     });
 
-    // Add active class to nav links on scroll
-    const sections = document.querySelectorAll('section');
-    
+    // Ensure default tab state
+    activateTab(tabButtons.find(tab => tab.getAttribute('aria-selected') === 'true') || tabButtons[0]);
+
+    // Add shadow to header on scroll
     window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinksItems.forEach(li => {
-            li.querySelector('a').classList.remove('active');
-            if (li.querySelector(`a[href*=${current}]`)) {
-                li.querySelector('a').classList.add('active');
-            }
-        });
-
-        // Add shadow to header on scroll
         if (window.scrollY > 50) {
             document.querySelector('header').classList.add('scrolled');
         } else {

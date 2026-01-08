@@ -94,6 +94,19 @@ section:nth-child(even) {
     background-color: var(--light-bg);
 }
 
+.tab-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Buttons */
 .cta-button {
     display: inline-block;
@@ -168,6 +181,26 @@ nav {
 }
 
 .nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a[role="tab"] {
+    outline: none;
+}
+
+.nav-links a[role="tab"]:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}
+
+.nav-links a[aria-selected="true"],
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-links a[aria-selected="true"]::after,
+.nav-links a.active::after {
     width: 100%;
 }
 

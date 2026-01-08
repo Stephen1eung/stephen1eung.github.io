@@ -15,11 +15,11 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">SL</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" role="tablist" aria-label="Primary">
+                <li role="presentation"><a id="tab-home" href="#home" role="tab" aria-controls="home" aria-selected="true" tabindex="0">Home</a></li>
+                <li role="presentation"><a id="tab-about" href="#about" role="tab" aria-controls="about" aria-selected="false" tabindex="-1">About</a></li>
+                <li role="presentation"><a id="tab-projects" href="#projects" role="tab" aria-controls="projects" aria-selected="false" tabindex="-1">Projects</a></li>
+                <li role="presentation"><a id="tab-contact" href="#contact" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -30,7 +30,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero tab-section active" role="tabpanel" aria-labelledby="tab-home" aria-hidden="false">
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span class="highlight">Stephen Leung</span></h1>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about tab-section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="true">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
@@ -65,7 +65,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects tab-section" role="tabpanel" aria-labelledby="tab-projects" aria-hidden="true">
         <div class="container">
             <h2>My Projects</h2>
             <div class="projects-grid">
@@ -110,7 +110,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact tab-section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
         <div class="container">
             <h2>Get In Touch</h2>
             <div class="contact-content">
