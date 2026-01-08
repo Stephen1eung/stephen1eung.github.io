@@ -1,195 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephen Leung | Developer Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Stephen Leung — developer portfolio" />
+  <title>Stephen Leung | Developer</title>
+
+  <!--
+    Single-page site requirements:
+    - No external libraries
+    - Fixed top nav
+    - Smooth scrolling + active section highlight
+    - 5 sections in exact order
+  -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">SL</a>
-            <ul class="nav-links" role="tablist" aria-label="Primary">
-                <li role="presentation"><a id="tab-home" href="#home" role="tab" aria-controls="home" aria-selected="true" tabindex="0">Home</a></li>
-                <li role="presentation"><a id="tab-about" href="#about" role="tab" aria-controls="about" aria-selected="false" tabindex="-1">About</a></li>
-                <li role="presentation"><a id="tab-projects" href="#projects" role="tab" aria-controls="projects" aria-selected="false" tabindex="-1">Projects</a></li>
-                <li role="presentation"><a id="tab-contact" href="#contact" role="tab" aria-controls="contact" aria-selected="false" tabindex="-1">Contact</a></li>
+  <!-- Skip link improves keyboard accessibility for a fixed nav layout -->
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Go to Home">SL</a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="nav__toggle-bars" aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav__list" id="nav-list">
+          <li><a class="nav__link is-active" href="#home" aria-current="page">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#my-cat">My Cat</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <!--
+      Section layout pattern:
+      - Minimum height ~100vh (visually full-screen)
+      - Content centered vertically
+      - Split layout: text + image
+      - Alternating direction via .section--alt
+    -->
+
+    <!-- Home -->
+    <section id="home" class="section section--home" aria-labelledby="home-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <p class="eyebrow">Developer Portfolio</p>
+            <h1 id="home-title" class="headline">Hi, I’m Stephen Leung.</h1>
+            <p class="subhead">
+              I build clean, user-focused web experiences and love working on software that blends thoughtful design,
+              data, and practical engineering.
+            </p>
+            <div class="cta-row">
+              <a class="button" href="#projects">View projects</a>
+              <a class="button button--ghost" href="#contact">Get in touch</a>
+            </div>
+          </div>
+
+          <div class="split__media">
+            <figure class="media-card">
+              <img
+                src="assets/hero.svg"
+                width="720"
+                height="540"
+                alt="Abstract illustration of a developer workspace"
+              />
+              <figcaption class="media-caption">A calm space for building useful things.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--alt" aria-labelledby="about-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <h2 id="about-title" class="section-title">About</h2>
+            <p>
+              I’m a developer who cares about the details that make products feel effortless: performance, accessibility,
+              and a UI that stays out of the user’s way. I enjoy building full-stack features end-to-end, from the first
+              wireframe to the final deploy.
+            </p>
+            <p>
+              Lately I’ve been focused on sharpening my fundamentals—clean component architecture, resilient APIs, and
+              the kind of polish that makes a site feel “finished.”
+            </p>
+            <dl class="key-points">
+              <div>
+                <dt>Focus</dt>
+                <dd>Frontend engineering + thoughtful UX</dd>
+              </div>
+              <div>
+                <dt>Strengths</dt>
+                <dd>Clarity, consistency, and maintainable systems</dd>
+              </div>
+              <div>
+                <dt>Currently exploring</dt>
+                <dd>Data visualization + AI-assisted workflows</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="split__media">
+            <figure class="media-card">
+              <img
+                src="assets/about.svg"
+                width="720"
+                height="540"
+                alt="Illustration of a tidy workspace with a laptop and notes"
+                loading="lazy"
+              />
+              <figcaption class="media-caption">I like systems that are simple to understand and easy to evolve.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <h2 id="projects-title" class="section-title">Projects</h2>
+            <p>
+              A small set of projects that reflect how I like to work: clear goals, clean interfaces, and
+              practical engineering decisions.
+            </p>
+            <ul class="project-highlights">
+              <li><strong>NBA Analysis</strong> — Turning game data into insights and visuals you can explore.</li>
+              <li><strong>Xpired</strong> — A gentle pantry tracker that helps reduce food waste before it starts.</li>
+              <li><strong>UI Kit Playground</strong> — A lightweight component library for rapid prototyping.</li>
             </ul>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-    </header>
+          </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero tab-section active" role="tabpanel" aria-labelledby="tab-home" aria-hidden="false">
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <h1>Hi, I'm <span class="highlight">Stephen Leung</span></h1>
-                    <h2>Full Stack Developer</h2>
-                    <p>Building digital experiences that matter</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
-                </div>
-                <div class="hero-media">
-                    <img src="https://via.placeholder.com/520x520/1e3a8a/ffffff?text=Portfolio+Preview" class="placeholder-image hero-placeholder" alt="Abstract placeholder representing a digital product mockup">
-                </div>
+          <div class="split__media">
+            <!--
+              Projects are presented as cards to keep the section clean.
+              Images are local SVGs (no external image CDNs).
+            -->
+            <div class="project-cards" aria-label="Project list">
+              <article class="project-card">
+                <img
+                  src="assets/project-nba.svg"
+                  width="640"
+                  height="360"
+                  alt="Code-themed illustration representing NBA data analysis"
+                  loading="lazy"
+                />
+                <h3 class="project-card__title">NBA Analysis</h3>
+                <p class="project-card__desc">Interactive charts + filters that make patterns in stats feel obvious.</p>
+              </article>
+
+              <article class="project-card">
+                <img
+                  src="assets/project-xpired.svg"
+                  width="640"
+                  height="360"
+                  alt="Illustration representing an app that tracks pantry items"
+                  loading="lazy"
+                />
+                <h3 class="project-card__title">Xpired</h3>
+                <p class="project-card__desc">A simple expiration dashboard with reminders and recipe inspiration.</p>
+              </article>
+
+              <article class="project-card">
+                <img
+                  src="assets/project-ui.svg"
+                  width="640"
+                  height="360"
+                  alt="Illustration representing reusable UI components"
+                  loading="lazy"
+                />
+                <h3 class="project-card__title">UI Kit Playground</h3>
+                <p class="project-card__desc">Reusable components with consistent spacing, type, and motion.</p>
+              </article>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about tab-section" role="tabpanel" aria-labelledby="tab-about" aria-hidden="true">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-layout">
-                <article class="about-summary">
-                    <figure class="about-figure">
-                        <img src="https://via.placeholder.com/420x420/0f172a/ffffff?text=Stephen+Leung" class="placeholder-image portrait" alt="Placeholder portrait of Stephen Leung">
-                    </figure>
-                    <div class="about-summary-body">
-                        <h3>Summary</h3>
-                        <p>I'm a product-minded engineer who thrives on pairing thoughtful design with resilient code. From rapid prototypes to production-ready platforms, I translate ideas into approachable solutions that scale.</p>
-                        <div class="skills">
-                            <h4>Core Skills</h4>
-                            <ul class="skills-list">
-                                <li>HTML5 &amp; CSS3</li>
-                                <li>JavaScript (ES6+)</li>
-                                <li>React.js</li>
-                                <li>Node.js</li>
-                                <li>Python</li>
-                                <li>Git &amp; GitHub</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-                <div class="about-grid">
-                    <article class="about-card">
-                        <figure class="about-card-media">
-                            <img src="https://via.placeholder.com/320x220/1e3a8a/ffffff?text=Work+Experience" class="placeholder-image" alt="Work experience placeholder graphic">
-                        </figure>
-                        <div class="about-card-body">
-                            <h3>Work Experience</h3>
-                            <ul class="work-experience-list">
-                                <li><span class="role">Senior Frontend Engineer</span> @ Productive Labs — Crafted component systems and design tooling for a distributed SaaS platform.</li>
-                                <li><span class="role">Full Stack Developer</span> @ Launch Collective — Led feature squads building data-rich dashboards for Fortune 500 clients.</li>
-                                <li><span class="role">Community Mentor</span> — Guided early-career developers through project-based learning cohorts.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="about-card">
-                        <figure class="about-card-media">
-                            <img src="https://via.placeholder.com/320x220/0f172a/ffffff?text=Hobbies" class="placeholder-image" alt="Hobbies placeholder graphic">
-                        </figure>
-                        <div class="about-card-body">
-                            <h3>Hobbies</h3>
-                            <p>Offline you'll find me sketching interface ideas, analyzing NBA box scores, and exploring new hiking trails for the perfect sunrise coffee stop.</p>
-                            <ul class="tag-list">
-                                <li>Sketching UI concepts</li>
-                                <li>Pick-up basketball</li>
-                                <li>Trail running</li>
-                                <li>Third-wave coffee</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article class="about-card cat-card">
-                        <figure class="about-card-media">
-                            <img src="https://via.placeholder.com/320x220/facc15/111827?text=Mochi+the+Cat" class="placeholder-image" alt="Cat placeholder representing Mochi the cat">
-                        </figure>
-                        <div class="about-card-body">
-                            <h3>My Cat</h3>
-                            <p>Meet Mochi, the curious tabby who supervises every late-night deployment. She's the resident QA lead, ensuring laptops stay warm and morale stays high.</p>
-                            <p class="cat-note">Fun fact: Mochi has a knack for walking across keyboards right as CI turns green.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
+    <!-- My Cat -->
+    <section id="my-cat" class="section section--alt" aria-labelledby="cat-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <h2 id="cat-title" class="section-title">My Cat</h2>
+            <p>
+              This is Mochi—my tiny coworker, professional napper, and the reason my commits sometimes have
+              suspiciously cat-shaped keyboard patterns.
+            </p>
+            <p>
+              Mochi has strong opinions about ergonomics (mostly: “laptop must be warm”) and will happily supervise
+              any debugging session as long as snacks are involved.
+            </p>
+            <ul class="cat-facts">
+              <li><strong>Favorite activity:</strong> Inspecting boxes that are clearly too small.</li>
+              <li><strong>Best skill:</strong> Appearing the moment I sit down to focus.</li>
+              <li><strong>Team role:</strong> Morale + purring-based stress testing.</li>
+            </ul>
+          </div>
+
+          <div class="split__media">
+            <figure class="media-card">
+              <img
+                src="assets/cat.svg"
+                width="720"
+                height="540"
+                alt="Friendly illustrated cat sitting next to a coffee mug"
+                loading="lazy"
+              />
+              <figcaption class="media-caption">Mochi approves of clean code and consistent spacing.</figcaption>
+            </figure>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects tab-section" role="tabpanel" aria-labelledby="tab-projects" aria-hidden="true">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/0f172a/ffffff?text=NBA+Analysis" alt="NBA data visualization placeholder">
-                    </div>
-                    <div class="project-info">
-                        <h3>NBA Analysis</h3>
-                        <p>An interactive analytics lab that surfaces advanced metrics, shot charts, and lineup efficiencies to help coaches and fans break down every possession.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>D3.js</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/1e40af/ffffff?text=Xpired" alt="Xpired product placeholder">
-                    </div>
-                    <div class="project-info">
-                        <h3>Xpired</h3>
-                        <p>A sustainability-focused pantry tracker that sends gentle nudges before ingredients expire, complete with recipe suggestions to reduce waste.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                        <div class="project-tags">
-                            <span>TypeScript</span>
-                            <span>Express</span>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <h2 id="contact-title" class="section-title">Contact</h2>
+            <p>
+              Want to collaborate, talk about a role, or swap project ideas? Send a note—I'll respond soon.
+            </p>
+
+            <div class="contact-cards">
+              <div class="contact-card">
+                <h3 class="contact-card__title">Email</h3>
+                <p class="contact-card__value"><a href="mailto:stephen@example.com">stephen@example.com</a></p>
+              </div>
+              <div class="contact-card">
+                <h3 class="contact-card__title">GitHub</h3>
+                <p class="contact-card__value"><a href="#">github.com/yourusername</a></p>
+              </div>
+              <div class="contact-card">
+                <h3 class="contact-card__title">LinkedIn</h3>
+                <p class="contact-card__value"><a href="#">linkedin.com/in/yourusername</a></p>
+              </div>
             </div>
+
+            <!-- Optional form: uses mailto to keep this static and dependency-free -->
+            <form class="contact-form" action="mailto:stephen@example.com" method="post" enctype="text/plain">
+              <div class="form-row">
+                <label>
+                  <span>Name</span>
+                  <input name="name" type="text" autocomplete="name" required />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input name="email" type="email" autocomplete="email" required />
+                </label>
+              </div>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+              <button class="button" type="submit">Send message</button>
+              <p class="form-note">This form opens your email client (no server required).</p>
+            </form>
+          </div>
+
+          <div class="split__media">
+            <figure class="media-card">
+              <img
+                src="assets/contact.svg"
+                width="720"
+                height="540"
+                alt="Abstract illustration of a message bubble and paper plane"
+                loading="lazy"
+              />
+              <figcaption class="media-caption">Thanks for stopping by.</figcaption>
+            </figure>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact tab-section" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you as soon as possible!</p>
-                <a href="mailto:your.email@example.com" class="cta-button">Say Hello</a>
-                <div class="social-links">
-                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>Built with <span class="heart">❤️</span> by Stephen Leung &copy; <span id="year"></span></p>
-            <p class="credit">Made with HTML, CSS, and JavaScript</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Built by Stephen Leung &copy; <span id="year"></span></p>
+    </div>
+  </footer>
 </body>
 </html>
