@@ -20,6 +20,9 @@
   <!-- Skip link improves keyboard accessibility for a fixed nav layout -->
   <a class="skip-link" href="#home">Skip to content</a>
 
+  <!-- ===================== -->
+  <!-- Fixed Top Navigation  -->
+  <!-- ===================== -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="Go to Home">SL</a>
@@ -33,9 +36,11 @@
         <ul class="nav__list" id="nav-list">
           <li><a class="nav__link is-active" href="#home" aria-current="page">Home</a></li>
           <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#experience">Experience</a></li>
           <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#photography">Photography</a></li>
           <li><a class="nav__link" href="#my-cat">My Cat</a></li>
-          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li><a class="nav__link" href="#education">Education</a></li>
         </ul>
       </nav>
     </div>
@@ -50,20 +55,40 @@
       - Alternating direction via .section--alt
     -->
 
-    <!-- Home -->
+    <!-- ===================== -->
+    <!-- Home Section          -->
+    <!-- ===================== -->
     <section id="home" class="section section--home" aria-labelledby="home-title">
       <div class="container section__inner">
         <div class="split reveal">
           <div class="split__copy">
-            <p class="eyebrow">Developer Portfolio</p>
-            <h1 id="home-title" class="headline">Hi, I’m Stephen Leung.</h1>
+            <p class="eyebrow">Hi, my name is</p>
+            <h1 id="home-title" class="headline">Stephen Leung.</h1>
             <p class="subhead">
-              I build clean, user-focused web experiences and love working on software that blends thoughtful design,
-              data, and practical engineering.
+              I have 4+ years of experience building Machine Learning applications. I'm passionate about Data Science, AI, and developing innovative solutions that make a difference.
             </p>
             <div class="cta-row">
-              <a class="button" href="#projects">View projects</a>
-              <a class="button button--ghost" href="#contact">Get in touch</a>
+              <a class="button" href="#experience">Work experience</a>
+              <a class="button button--ghost" href="#projects">View projects</a>
+            </div>
+
+            <!-- Social links live in the Home section (no separate Contact section). -->
+            <div class="social-links" aria-label="Social links">
+              <a class="icon-link" href="https://github.com/Stephen1eung" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.77.6-3.35-1.34-3.35-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.6.07-.6 1 .07 1.52 1.03 1.52 1.03.89 1.52 2.33 1.08 2.9.83.09-.65.35-1.08.64-1.33-2.21-.25-4.54-1.1-4.54-4.92 0-1.09.39-1.99 1.03-2.69-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.39.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.83-2.34 4.66-4.57 4.9.36.3.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+                </svg>
+              </a>
+              <a class="icon-link" href="https://www.linkedin.com/in/stephen1eung/" target="_blank" rel="noreferrer" aria-label="Open LinkedIn profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.33c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4Z"/>
+                </svg>
+              </a>
+              <a class="icon-link" href="mailto:stephen1eung@hotmail.com" aria-label="Email me">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -82,7 +107,10 @@
       </div>
     </section>
 
-    <!-- About -->
+
+    <!-- ===================== -->
+    <!-- About Section         -->
+    <!-- ===================== -->
     <section id="about" class="section section--alt" aria-labelledby="about-title">
       <div class="container section__inner">
         <div class="split reveal">
@@ -107,8 +135,8 @@
                 <dd>Clarity, consistency, and maintainable systems</dd>
               </div>
               <div>
-                <dt>Currently exploring</dt>
-                <dd>Data visualization + AI-assisted workflows</dd>
+                <dt>Currently Exploring</dt>
+                <dd>Data Engineering and CI/CD pipelines</dd>
               </div>
             </dl>
           </div>
@@ -129,7 +157,99 @@
       </div>
     </section>
 
-    <!-- Projects -->
+
+    <!-- ===================== -->
+    <!-- Work Experience       -->
+    <!-- ===================== -->
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <div class="container section__inner">
+        <div class="reveal">
+          <h2 id="experience-title" class="section-title">Work Experience</h2>
+          <p class="section-intro">
+            <!-- TODO: Add work experience summary -->
+          </p>
+
+          <!--
+            Timeline structure:
+            - .timeline is the vertical line
+            - each .timeline__item becomes a left or right "branch" (alternating via CSS)
+            - cards contain title, role, dates, and tech stack
+          -->
+          <div class="timeline" aria-label="Work experience timeline">
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">Data Engineering Co-op</h3>
+                <p class="timeline__meta">ICBC - Insurance Corporation of British Columbia</p>
+                <p class="timeline__body">Jan – Present</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Scala</li>
+                  <li>Spark</li>
+                  <li>SQL</li>
+                  <li>AWS</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">Actuarial Machine Learning Co-op</h3>
+                <p class="timeline__meta">WorkSafeBC</p>
+                <p class="timeline__body">May - Dec 2025</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>SQL</li>
+                  <li>Azure</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">Machine Learning Engineer</h3>
+                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
+                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>Pandas</li>
+                  <li>Jupyter</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">Research Assistant</h3>
+                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
+                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>Pandas</li>
+                  <li>Jupyter</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">Research Assistant</h3>
+                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
+                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>Pandas</li>
+                  <li>Jupyter</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- Projects Section      -->
+    <!-- ===================== -->
     <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="container section__inner">
         <div class="split reveal">
@@ -142,7 +262,6 @@
             <ul class="project-highlights">
               <li><strong>NBA Analysis</strong> — Turning game data into insights and visuals you can explore.</li>
               <li><strong>Xpired</strong> — A gentle pantry tracker that helps reduce food waste before it starts.</li>
-              <li><strong>UI Kit Playground</strong> — A lightweight component library for rapid prototyping.</li>
             </ul>
           </div>
 
@@ -175,26 +294,106 @@
                 <h3 class="project-card__title">Xpired</h3>
                 <p class="project-card__desc">A simple expiration dashboard with reminders and recipe inspiration.</p>
               </article>
-
-              <article class="project-card">
-                <img
-                  src="assets/project-ui.svg"
-                  width="640"
-                  height="360"
-                  alt="Illustration representing reusable UI components"
-                  loading="lazy"
-                />
-                <h3 class="project-card__title">UI Kit Playground</h3>
-                <p class="project-card__desc">Reusable components with consistent spacing, type, and motion.</p>
-              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- My Cat -->
-    <section id="my-cat" class="section section--alt" aria-labelledby="cat-title">
+
+    <!-- ===================== -->
+    <!-- Education Section     -->
+    <!-- ===================== -->
+    <section id="education" class="section section--alt" aria-labelledby="education-title">
+      <div class="container section__inner">
+        <div class="split reveal">
+          <div class="split__copy">
+            <h2 id="education-title" class="section-title">Education</h2>
+            <div class="education-block">
+              <p class="education-dates">2022 – 2026 (Expected)</p>
+              <h3 class="education-program">B.S. Computer Science</h3>
+              <p class="education-school">University Name (Placeholder)</p>
+              <p class="education-body">
+                I’m focused on building strong fundamentals in software engineering while exploring real-world projects
+                in data and web development.
+              </p>
+
+              <p class="eyebrow">Relevant coursework</p>
+              <ul class="coursework" aria-label="Relevant coursework">
+                <li>Data Structures &amp; Algorithms</li>
+                <li>Database Systems</li>
+                <li>Operating Systems</li>
+                <li>Software Engineering</li>
+                <li>Machine Learning (intro)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="split__media">
+            <figure class="media-card">
+              <img
+                src="assets/education.svg"
+                width="720"
+                height="540"
+                alt="Abstract illustration representing education and learning"
+                loading="lazy"
+              />
+              <figcaption class="media-caption">Always learning, always iterating.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- Photography Section   -->
+    <!-- ===================== -->
+    <section id="photography" class="section section--alt" aria-labelledby="photography-title">
+      <div class="container section__inner">
+        <!--
+          Photography layout:
+          - text centered on top
+          - images in a neat grid below
+        -->
+        <div class="stack reveal">
+          <header class="stack__header">
+            <h2 id="photography-title" class="section-title">Photography</h2>
+            <p class="stack__lead">
+              Photography helps me slow down and notice details—light, composition, and the tiny moments that make a
+              scene feel alive. Here are a few placeholders for shots I’ve taken.
+            </p>
+            <p class="stack__lead">Click any thumbnail to view it larger.</p>
+          </header>
+
+          <div class="gallery" aria-label="Photography gallery">
+            <a class="gallery__thumb" href="assets/photo-1.svg" data-lightbox="photo" aria-label="Open photo 1">
+              <img src="assets/photo-1.svg" alt="Placeholder landscape photo 1" loading="lazy" />
+            </a>
+            <a class="gallery__thumb" href="assets/photo-2.svg" data-lightbox="photo" aria-label="Open photo 2">
+              <img src="assets/photo-2.svg" alt="Placeholder landscape photo 2" loading="lazy" />
+            </a>
+            <a class="gallery__thumb" href="assets/photo-3.svg" data-lightbox="photo" aria-label="Open photo 3">
+              <img src="assets/photo-3.svg" alt="Placeholder street photo 3" loading="lazy" />
+            </a>
+            <a class="gallery__thumb" href="assets/photo-4.svg" data-lightbox="photo" aria-label="Open photo 4">
+              <img src="assets/photo-4.svg" alt="Placeholder portrait photo 4" loading="lazy" />
+            </a>
+            <a class="gallery__thumb" href="assets/photo-5.svg" data-lightbox="photo" aria-label="Open photo 5">
+              <img src="assets/photo-5.svg" alt="Placeholder city photo 5" loading="lazy" />
+            </a>
+            <a class="gallery__thumb" href="assets/photo-6.svg" data-lightbox="photo" aria-label="Open photo 6">
+              <img src="assets/photo-6.svg" alt="Placeholder film photo 6" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- My Cat Section        -->
+    <!-- ===================== -->
+    <section id="my-cat" class="section" aria-labelledby="cat-title">
       <div class="container section__inner">
         <div class="split reveal">
           <div class="split__copy">
@@ -230,67 +429,18 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <div class="container section__inner">
-        <div class="split reveal">
-          <div class="split__copy">
-            <h2 id="contact-title" class="section-title">Contact</h2>
-            <p>
-              Want to collaborate, talk about a role, or swap project ideas? Send a note—I'll respond soon.
-            </p>
 
-            <div class="contact-cards">
-              <div class="contact-card">
-                <h3 class="contact-card__title">Email</h3>
-                <p class="contact-card__value"><a href="mailto:stephen@example.com">stephen@example.com</a></p>
-              </div>
-              <div class="contact-card">
-                <h3 class="contact-card__title">GitHub</h3>
-                <p class="contact-card__value"><a href="#">github.com/yourusername</a></p>
-              </div>
-              <div class="contact-card">
-                <h3 class="contact-card__title">LinkedIn</h3>
-                <p class="contact-card__value"><a href="#">linkedin.com/in/yourusername</a></p>
-              </div>
-            </div>
-
-            <!-- Optional form: uses mailto to keep this static and dependency-free -->
-            <form class="contact-form" action="mailto:stephen@example.com" method="post" enctype="text/plain">
-              <div class="form-row">
-                <label>
-                  <span>Name</span>
-                  <input name="name" type="text" autocomplete="name" required />
-                </label>
-                <label>
-                  <span>Email</span>
-                  <input name="email" type="email" autocomplete="email" required />
-                </label>
-              </div>
-              <label>
-                <span>Message</span>
-                <textarea name="message" rows="5" required></textarea>
-              </label>
-              <button class="button" type="submit">Send message</button>
-              <p class="form-note">This form opens your email client (no server required).</p>
-            </form>
-          </div>
-
-          <div class="split__media">
-            <figure class="media-card">
-              <img
-                src="assets/contact.svg"
-                width="720"
-                height="540"
-                alt="Abstract illustration of a message bubble and paper plane"
-                loading="lazy"
-              />
-              <figcaption class="media-caption">Thanks for stopping by.</figcaption>
-            </figure>
-          </div>
-        </div>
+    <!-- ===================== -->
+    <!-- Lightbox Overlay      -->
+    <!-- (Used by Photography) -->
+    <!-- ===================== -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" aria-label="Expanded photo viewer" aria-modal="true" role="dialog">
+      <div class="lightbox__backdrop" data-lightbox-close></div>
+      <div class="lightbox__content" role="document">
+        <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close photo viewer">Close</button>
+        <img class="lightbox__image" src="" alt="" />
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="site-footer">
