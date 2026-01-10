@@ -38,9 +38,9 @@
           <li><a class="nav__link" href="#about">About</a></li>
           <li><a class="nav__link" href="#experience">Experience</a></li>
           <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#education">Education</a></li>
           <li><a class="nav__link" href="#photography">Photography</a></li>
           <li><a class="nav__link" href="#my-cat">My Cat</a></li>
-          <li><a class="nav__link" href="#education">Education</a></li>
         </ul>
       </nav>
     </div>
@@ -115,7 +115,7 @@
       <div class="container section__inner">
         <div class="split reveal">
           <div class="split__copy">
-            <h2 id="about-title" class="section-title">About</h2>
+            <h2 id="about-title" class="section-title">About Me</h2>
             <p>
               I’m a developer who cares about the details that make products feel effortless: performance, accessibility,
               and a UI that stays out of the user’s way. I enjoy building full-stack features end-to-end, from the first
@@ -180,7 +180,7 @@
               <article class="timeline__card">
                 <h3 class="timeline__title">Data Engineering Co-op</h3>
                 <p class="timeline__meta">ICBC - Insurance Corporation of British Columbia</p>
-                <p class="timeline__body">Jan – Present</p>
+                <p class="timeline__body">Jan 2026 – Present</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Scala</li>
                   <li>Spark</li>
@@ -192,9 +192,24 @@
 
             <div class="timeline__item">
               <article class="timeline__card">
+                <h3 class="timeline__title">Machine Learning Engineer</h3>
+                <p class="timeline__meta">M2M Tech Inc.</p>
+                <p class="timeline__body">May 2022 - Present</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>SQL</li>
+                  <li>Azure</li>
+                  <li>GCP</li>
+                  <li>AWS</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
                 <h3 class="timeline__title">Actuarial Machine Learning Co-op</h3>
                 <p class="timeline__meta">WorkSafeBC</p>
-                <p class="timeline__body">May - Dec 2025</p>
+                <p class="timeline__body">May 2025 - Dec 2025</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
                   <li>SQL</li>
@@ -205,39 +220,28 @@
 
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Machine Learning Engineer</h3>
-                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
-                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
+                <h3 class="timeline__title">Machine Learning Engineer Co-op</h3>
+                <p class="timeline__meta">Skyline Innovation Inc.</p>
+                <p class="timeline__body">Nov 2024 - May 2025</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
                   <li>Pandas</li>
-                  <li>Jupyter</li>
+                  <li>GCP</li>
+                  <li>ASR</li>
                 </ul>
               </article>
             </div>
 
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Research Assistant</h3>
-                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
-                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
+                <h3 class="timeline__title">Data Scientist Co-op</h3>
+                <p class="timeline__meta">NCIS - Nautical Crime Investigation Services</p>
+                <p class="timeline__body">Sep 2024 - Dec 2024</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
-                  <li>Pandas</li>
-                  <li>Jupyter</li>
-                </ul>
-              </article>
-            </div>
-
-            <div class="timeline__item">
-              <article class="timeline__card">
-                <h3 class="timeline__title">Research Assistant</h3>
-                <p class="timeline__meta">University Lab · Data + tooling · Sep 2023 – Dec 2023</p>
-                <p class="timeline__body">Prototyped analysis scripts and cleaned datasets to support reporting and internal experimentation.</p>
-                <ul class="tag-row" aria-label="Tech stack used">
-                  <li>Python</li>
-                  <li>Pandas</li>
-                  <li>Jupyter</li>
+                  <li>LLM</li>
+                  <li>LangChain</li>
+                  <li>LangSmith</li>
                 </ul>
               </article>
             </div>
@@ -248,55 +252,50 @@
 
 
     <!-- ===================== -->
-    <!-- Projects Section      -->
+    <!-- Personal Projects Section      -->
     <!-- ===================== -->
     <section id="projects" class="section" aria-labelledby="projects-title">
-      <div class="container section__inner">
-        <div class="split reveal">
-          <div class="split__copy">
-            <h2 id="projects-title" class="section-title">Projects</h2>
-            <p>
-              A small set of projects that reflect how I like to work: clear goals, clean interfaces, and
-              practical engineering decisions.
-            </p>
-            <ul class="project-highlights">
-              <li><strong>NBA Analysis</strong> — Turning game data into insights and visuals you can explore.</li>
-              <li><strong>Xpired</strong> — A gentle pantry tracker that helps reduce food waste before it starts.</li>
-            </ul>
-          </div>
+      <div class="container section__inner reveal">
 
-          <div class="split__media">
-            <!--
-              Projects are presented as cards to keep the section clean.
-              Images are local SVGs (no external image CDNs).
-            -->
-            <div class="project-cards" aria-label="Project list">
-              <article class="project-card">
-                <img
-                  src="assets/project-nba.svg"
-                  width="640"
-                  height="360"
-                  alt="Code-themed illustration representing NBA data analysis"
-                  loading="lazy"
-                />
-                <h3 class="project-card__title">NBA Analysis</h3>
-                <p class="project-card__desc">Interactive charts + filters that make patterns in stats feel obvious.</p>
-              </article>
-
-              <article class="project-card">
-                <img
-                  src="assets/project-xpired.svg"
-                  width="640"
-                  height="360"
-                  alt="Illustration representing an app that tracks pantry items"
-                  loading="lazy"
-                />
-                <h3 class="project-card__title">Xpired</h3>
-                <p class="project-card__desc">A simple expiration dashboard with reminders and recipe inspiration.</p>
-              </article>
-            </div>
-          </div>
+        <!-- Top: Title + Description -->
+        <div class="projects__header">
+          <h2 id="projects-title" class="section-title">Personal Projects</h2>
+          <p>
+            <!-- TODO: Add project summary -->
+          </p>
         </div>
+
+        <!-- Bottom: Project cards -->
+        <div class="project-cards" aria-label="Project list">
+          <article class="project-card">
+            <img
+              src="assets/project-nba.svg"
+              width="640"
+              height="360"
+              alt="Code-themed illustration representing NBA data analysis"
+              loading="lazy"
+            />
+            <h3 class="project-card__title">NBA Analysis</h3>
+            <p class="project-card__desc">
+              Turning game data into insights and visuals you can explore.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <img
+              src="assets/project-xpired.svg"
+              width="640"
+              height="360"
+              alt="Illustration representing an app that tracks pantry items"
+              loading="lazy"
+            />
+            <h3 class="project-card__title">Xpired</h3>
+            <p class="project-card__desc">
+              A pantry tracker application used to reduce food waste.
+            </p>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -310,21 +309,17 @@
           <div class="split__copy">
             <h2 id="education-title" class="section-title">Education</h2>
             <div class="education-block">
-              <p class="education-dates">2022 – 2026 (Expected)</p>
-              <h3 class="education-program">B.S. Computer Science</h3>
-              <p class="education-school">University Name (Placeholder)</p>
-              <p class="education-body">
-                I’m focused on building strong fundamentals in software engineering while exploring real-world projects
-                in data and web development.
-              </p>
+              <h3 class="education-school">Simon Fraser University</h3>
+              <p class="education-program">B.S. Computer Science (Spec. Artificial Intelligence)</p>
+              <p class="education-dates">2020 – 2026 (Expected)</p>
 
               <p class="eyebrow">Relevant coursework</p>
               <ul class="coursework" aria-label="Relevant coursework">
                 <li>Data Structures &amp; Algorithms</li>
                 <li>Database Systems</li>
-                <li>Operating Systems</li>
-                <li>Software Engineering</li>
                 <li>Machine Learning (intro)</li>
+                <li>Computer Vision</li>
+                <li>UI/ UX Design</li>
               </ul>
             </div>
           </div>
@@ -338,7 +333,7 @@
                 alt="Abstract illustration representing education and learning"
                 loading="lazy"
               />
-              <figcaption class="media-caption">Always learning, always iterating.</figcaption>
+
             </figure>
           </div>
         </div>
@@ -363,7 +358,7 @@
               Photography helps me slow down and notice details—light, composition, and the tiny moments that make a
               scene feel alive. Here are a few placeholders for shots I’ve taken.
             </p>
-            <p class="stack__lead">Click any thumbnail to view it larger.</p>
+            <h6 class="stack__lead"><i>Click any thumbnail to view it larger.</i></h6>
           </header>
 
           <div class="gallery" aria-label="Photography gallery">
