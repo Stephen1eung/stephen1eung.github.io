@@ -1,16 +1,14 @@
 /*
-  Vanilla JS enhancements (only what's necessary):
+  Vanilla JS enhancements:
   - Smooth scrolling with fixed-header offset
   - Active nav item while scrolling
-  - Subtle reveal animations on scroll (IntersectionObserver)
+  - Subtle reveal animations on scroll
   - Mobile nav toggle
 */
 
 (() => {
-  // Add a class so CSS can enable/disable JS-only effects safely.
   document.documentElement.classList.add('js');
 
-  // Footer year (nice-to-have, still no dependencies).
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -26,7 +24,6 @@
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close menu when a link is clicked (mobile UX).
     navList.addEventListener('click', (event) => {
       const target = event.target;
       if (!(target instanceof HTMLElement)) return;
@@ -37,7 +34,6 @@
     });
   }
 
-  // Smooth scroll with fixed-header offset.
   const navLinks = Array.from(document.querySelectorAll('.nav__link'));
 
   function scrollToSection(id) {
@@ -100,7 +96,6 @@
 
     sections.forEach((section) => observer.observe(section));
   } else {
-    // Fallback: simple scroll-based selection.
     window.addEventListener('scroll', () => {
       const y = window.pageYOffset + headerHeight + 20;
       const current = sections
@@ -110,7 +105,6 @@
     });
   }
 
-  // Reveal animation.
   const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
   if ('IntersectionObserver' in window) {
@@ -129,68 +123,29 @@
 
     revealEls.forEach((el) => revealObserver.observe(el));
   } else {
-    // No observer support: just show everything.
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // =========================
-  // Photography: Simple Lightbox
-  // =========================
-  // This keeps the site dependency-free while letting you click thumbnails
-  // in the Photography section to view a larger image.
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.querySelector('.lightbox__image');
-  const lightboxCloseButtons = Array.from(document.querySelectorAll('[data-lightbox-close]'));
-  const galleryLinks = Array.from(document.querySelectorAll('a[data-lightbox="photo"]'));
+  // Timeline card animations
+  const timelineCards = Array.from(document.querySelectorAll('.timeline__card'));
+  
+  if ('IntersectionObserver' in window) {
+    const timelineObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
 
-  let lastFocusedElement = null;
-
-  const openLightbox = ({ src, alt }) => {
-    if (!lightbox || !lightboxImage) return;
-
-    lastFocusedElement = document.activeElement;
-    lightboxImage.src = src;
-    lightboxImage.alt = alt || 'Expanded photo';
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-
-    const closeButton = lightbox.querySelector('.lightbox__close');
-    if (closeButton) closeButton.focus();
-  };
-
-  const closeLightbox = () => {
-    if (!lightbox || !lightboxImage) return;
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    lightboxImage.src = '';
-    lightboxImage.alt = '';
-
-    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-      lastFocusedElement.focus();
-    }
-    lastFocusedElement = null;
-  };
-
-  galleryLinks.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-
-      const href = link.getAttribute('href');
-      const img = link.querySelector('img');
-      if (!href || !img) return;
-
-      openLightbox({ src: href, alt: img.getAttribute('alt') });
-    });
-  });
-
-  lightboxCloseButtons.forEach((el) => {
-    el.addEventListener('click', () => closeLightbox());
-  });
-
-  window.addEventListener('keydown', (event) => {
-    if (!lightbox || !lightbox.classList.contains('is-open')) return;
-    if (event.key === 'Escape') closeLightbox();
-  });
+    timelineCards.forEach((card) => timelineObserver.observe(card));
+  } else {
+    timelineCards.forEach((card) => card.classList.add('is-visible'));
+  }
 })();

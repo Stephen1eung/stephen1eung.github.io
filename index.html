@@ -3,25 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Stephen Leung — developer portfolio" />
-  <title>Stephen Leung | Developer</title>
+  <meta name="description" content="Stephen Leung portfolio" />
+  <title>Stephen Leung</title>
 
-  <!--
-    Single-page site requirements:
-    - No external libraries
-    - Fixed top nav
-    - Smooth scrolling + active section highlight
-    - 5 sections in exact order
-  -->
+
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Skip link improves keyboard accessibility for a fixed nav layout -->
   <a class="skip-link" href="#home">Skip to content</a>
 
   <!-- ===================== -->
-  <!-- Fixed Top Navigation  -->
+  <!--     Header Section  -->
   <!-- ===================== -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
@@ -39,21 +32,14 @@
           <li><a class="nav__link" href="#experience">Experience</a></li>
           <li><a class="nav__link" href="#projects">Projects</a></li>
           <li><a class="nav__link" href="#education">Education</a></li>
-          <li><a class="nav__link" href="#photography">Photography</a></li>
           <li><a class="nav__link" href="#my-cat">My Cat</a></li>
+          <li><a class="nav__link nav__link--resume" href="https://drive.google.com/file/d/1b4RSDgjGMtbiK1WxsLQVR47H5rNdaBJY/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="site-main">
-    <!--
-      Section layout pattern:
-      - Minimum height ~100vh (visually full-screen)
-      - Content centered vertically
-      - Split layout: text + image
-      - Alternating direction via .section--alt
-    -->
 
     <!-- ===================== -->
     <!-- Home Section          -->
@@ -65,14 +51,17 @@
             <p class="eyebrow">Hi, my name is</p>
             <h1 id="home-title" class="headline">Stephen Leung.</h1>
             <p class="subhead">
-              I have 4+ years of experience building Machine Learning applications. I'm passionate about Data Science, AI, and developing innovative solutions that make a difference.
+              I'm a 4th year Computer Science student at Simon Fraser University.<br>
+              I have 4+ years of experience building Machine Learning applications.<br>
+              I’m passionate about data science and AI, building innovative solutions that turn raw data into actionable insights.<br>
             </p>
             <div class="cta-row">
-              <a class="button" href="#experience">Work experience</a>
-              <a class="button button--ghost" href="#projects">View projects</a>
+              <a class="button" href="mailto:stephen1eung@hotmail.com">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>Email Me </a>
+              <a class="button button--ghost" href="#experience">Work Experience</a>
+              <a class="button button--ghost" href="#projects">Projects</a>
             </div>
 
-            <!-- Social links live in the Home section (no separate Contact section). -->
             <div class="social-links" aria-label="Social links">
               <a class="icon-link" href="https://github.com/Stephen1eung" target="_blank" rel="noreferrer" aria-label="Open GitHub profile">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -84,23 +73,25 @@
                   <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 21V9h4v12H3Zm7 0V9h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.33c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21h-4Z"/>
                 </svg>
               </a>
-              <a class="icon-link" href="mailto:stephen1eung@hotmail.com" aria-label="Email me">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
-                </svg>
-              </a>
+              <div class="phone-container">
+                <a class="icon-link" href="tel:778-882-0322" aria-label="Phone Number">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </a>
+                <span class="phone-text">778-882-0322</span>
+              </div>
             </div>
           </div>
 
           <div class="split__media">
             <figure class="media-card">
               <img
-                src="assets/hero.svg"
+                src="assets/headshot.jpg"
                 width="720"
                 height="540"
                 alt="Abstract illustration of a developer workspace"
               />
-              <figcaption class="media-caption">A calm space for building useful things.</figcaption>
             </figure>
           </div>
         </div>
@@ -117,40 +108,100 @@
           <div class="split__copy">
             <h2 id="about-title" class="section-title">About Me</h2>
             <p>
-              I’m a developer who cares about the details that make products feel effortless: performance, accessibility,
-              and a UI that stays out of the user’s way. I enjoy building full-stack features end-to-end, from the first
-              wireframe to the final deploy.
+              I’m a motivated developer who enjoys solving complex problems with data science and AI. 
+              I focus on building thoughtful, well-designed solutions through end-to-end, full life cycle development that are both technically sound and impactful.
             </p>
             <p>
-              Lately I’ve been focused on sharpening my fundamentals—clean component architecture, resilient APIs, and
-              the kind of polish that makes a site feel “finished.”
+              Lately, I’ve been focusing on deepening my skills in cloud platforms, while sharpening my fundamentals in data science and algorithms to build robust, efficient, and well-structured solutions.
             </p>
             <dl class="key-points">
               <div>
-                <dt>Focus</dt>
-                <dd>Frontend engineering + thoughtful UX</dd>
+                <dt>Interests</dt>
+                <dd>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#2563eb" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>Cloud platforms<br>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#2563eb" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>DS / ML / AI<br>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#2563eb" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>Agentic AI<br>
+                </dd>
               </div>
               <div>
-                <dt>Strengths</dt>
-                <dd>Clarity, consistency, and maintainable systems</dd>
-              </div>
-              <div>
-                <dt>Currently Exploring</dt>
-                <dd>Data Engineering and CI/CD pipelines</dd>
+                <dt>Hobbies</dt>
+                <dd>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>Golfing<br>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>Snowboarding<br>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="#10b981" class="bullet-icon">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>Cooking<br>
+                </dd>
               </div>
             </dl>
+
+            <div class="card widget-card stack-card">
+                        <div class="card-label">MY STACK</div>
+                        <div class="stack-icons">
+                            <a href="https://www.python.org/" target="_blank" class="stack-item"
+                                data-tooltip="Python"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python"></a>
+                                    
+                            <a href="https://www.microsoft.com/en-us/sql-server/" target="_blank" class="stack-item"
+                                data-tooltip="SQL"><img
+                                    src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="SQL"></a>
+
+                            <a href="https://www.scala-lang.org/" target="_blank" class="stack-item"
+                                data-tooltip="Scala"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg"
+                                    alt="Scala"></a>
+
+                            <a href="https://azure.microsoft.com/" target="_blank" class="stack-item"
+                                data-tooltip="Azure"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"></a>
+
+                            <a href="https://pandas.pydata.org/" target="_blank" class="stack-item"
+                                data-tooltip="Pandas"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                                    alt="Pandas"></a>
+
+                            <a href="https://www.tensorflow.org/" target="_blank" class="stack-item"
+                                data-tooltip="TensorFlow"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                                    alt="TF"></a>
+
+                            <a href="https://pytorch.org/" target="_blank" class="stack-item"
+                                data-tooltip="pyTorch"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                                    alt="pyTorch"></a>
+
+                            <a href="https://git-scm.com/" target="_blank" class="stack-item" data-tooltip="Git"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git"></a>
+
+                            <a href="https://spark.apache.org/docs/latest/api/python/" target="_blank"
+                                class="stack-item" data-tooltip="pySpark"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg"
+                                    alt="pySpark"></a>
+                        </div>
+                    </div>
           </div>
 
           <div class="split__media">
             <figure class="media-card">
               <img
-                src="assets/about.svg"
+                src="assets/about.jpg"
                 width="720"
                 height="540"
                 alt="Illustration of a tidy workspace with a laptop and notes"
                 loading="lazy"
               />
-              <figcaption class="media-caption">I like systems that are simple to understand and easy to evolve.</figcaption>
             </figure>
           </div>
         </div>
@@ -168,19 +219,15 @@
           <p class="section-intro">
             <!-- TODO: Add work experience summary -->
           </p>
-
-          <!--
-            Timeline structure:
-            - .timeline is the vertical line
-            - each .timeline__item becomes a left or right "branch" (alternating via CSS)
-            - cards contain title, role, dates, and tech stack
-          -->
+        
           <div class="timeline" aria-label="Work experience timeline">
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Data Engineering Co-op</h3>
+                <h3 class="timeline__title">
+                  <span>Data Engineering Co-op</span>
+                  <span>Jan 2026 – Present</span>
+                </h3>
                 <p class="timeline__meta">ICBC - Insurance Corporation of British Columbia</p>
-                <p class="timeline__body">Jan 2026 – Present</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Scala</li>
                   <li>Spark</li>
@@ -192,9 +239,11 @@
 
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Machine Learning Engineer</h3>
+                <h3 class="timeline__title">
+                  <span>Machine Learning Engineer</span>
+                  <span>May 2022 - Present</span>
+                </h3>
                 <p class="timeline__meta">M2M Tech Inc.</p>
-                <p class="timeline__body">May 2022 - Present</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
                   <li>SQL</li>
@@ -207,38 +256,48 @@
 
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Actuarial Machine Learning Co-op</h3>
+                <h3 class="timeline__title">
+                  <span>Actuarial Machine Learning Co-op</span>
+                  <span>May 2025 - Dec 2025</span>
+                </h3>
                 <p class="timeline__meta">WorkSafeBC</p>
-                <p class="timeline__body">May 2025 - Dec 2025</p>
-                <ul class="tag-row" aria-label="Tech stack used">
-                  <li>Python</li>
-                  <li>SQL</li>
-                  <li>Azure</li>
-                </ul>
-              </article>
-            </div>
-
-            <div class="timeline__item">
-              <article class="timeline__card">
-                <h3 class="timeline__title">Machine Learning Engineer Co-op</h3>
-                <p class="timeline__meta">Skyline Innovation Inc.</p>
-                <p class="timeline__body">Nov 2024 - May 2025</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
                   <li>Pandas</li>
-                  <li>GCP</li>
-                  <li>ASR</li>
+                  <li>SQL</li>
+                  <li>SQL Server</li>
+                  <li>Azure</li>
+                  <li>MLFlow</li>
                 </ul>
               </article>
             </div>
 
             <div class="timeline__item">
               <article class="timeline__card">
-                <h3 class="timeline__title">Data Scientist Co-op</h3>
-                <p class="timeline__meta">NCIS - Nautical Crime Investigation Services</p>
-                <p class="timeline__body">Sep 2024 - Dec 2024</p>
+                <h3 class="timeline__title">
+                  <span>Machine Learning Engineer</span>
+                  <span>Nov 2024 - May 2025</span>
+                </h3>
+                <p class="timeline__meta">Skyline Innovation Inc.</p>
                 <ul class="tag-row" aria-label="Tech stack used">
                   <li>Python</li>
+                  <li>Pandas</li>
+                  <li>ASR</li>
+                  <li>GCP</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline__item">
+              <article class="timeline__card">
+                <h3 class="timeline__title">
+                  <span>Data Scientist</span>
+                  <span>Sep 2024 - Dec 2024</span>
+                </h3>
+                <p class="timeline__meta">NCIS - Nautical Crime Investigation Service</p>
+                <ul class="tag-row" aria-label="Tech stack used">
+                  <li>Python</li>
+                  <li>NER</li>
                   <li>LLM</li>
                   <li>LangChain</li>
                   <li>LangSmith</li>
@@ -257,7 +316,6 @@
     <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="container section__inner reveal">
 
-        <!-- Top: Title + Description -->
         <div class="projects__header">
           <h2 id="projects-title" class="section-title">Personal Projects</h2>
           <p>
@@ -265,11 +323,10 @@
           </p>
         </div>
 
-        <!-- Bottom: Project cards -->
         <div class="project-cards" aria-label="Project list">
           <article class="project-card">
             <img
-              src="assets/project-nba.svg"
+              src="assets/project-nba.jpg"
               width="640"
               height="360"
               alt="Code-themed illustration representing NBA data analysis"
@@ -277,13 +334,14 @@
             />
             <h3 class="project-card__title">NBA Analysis</h3>
             <p class="project-card__desc">
-              Turning game data into insights and visuals you can explore.
+              Utilized Linear, K-Neighbors, MLP, RF regressors to analyze NBA player salaries based on the positions they played, 
+              investigating positional effects and the predictive influence of covariates such as social media following and three-point scoring probability.
             </p>
           </article>
 
           <article class="project-card">
             <img
-              src="assets/project-xpired.svg"
+              src="assets/project-xpired.jpg"
               width="640"
               height="360"
               alt="Illustration representing an app that tracks pantry items"
@@ -291,7 +349,8 @@
             />
             <h3 class="project-card__title">Xpired</h3>
             <p class="project-card__desc">
-              A pantry tracker application used to reduce food waste.
+              A machine learning project designed to help you keep track of the expiration dates of your food products.
+              By using a YOLOv8 model for object detection and Optical Character Recognition (OCR) technology, capturing images of expiration dates and storing this information in a database. 
             </p>
           </article>
         </div>
@@ -305,85 +364,44 @@
     <!-- ===================== -->
     <section id="education" class="section section--alt" aria-labelledby="education-title">
       <div class="container section__inner">
-        <div class="split reveal">
-          <div class="split__copy">
-            <h2 id="education-title" class="section-title">Education</h2>
-            <div class="education-block">
-              <h3 class="education-school">Simon Fraser University</h3>
-              <p class="education-program">B.S. Computer Science (Spec. Artificial Intelligence)</p>
-              <p class="education-dates">2020 – 2026 (Expected)</p>
-
-              <p class="eyebrow">Relevant coursework</p>
-              <ul class="coursework" aria-label="Relevant coursework">
-                <li>Data Structures &amp; Algorithms</li>
-                <li>Database Systems</li>
-                <li>Machine Learning (intro)</li>
-                <li>Computer Vision</li>
-                <li>UI/ UX Design</li>
-              </ul>
+        <div class="education-container reveal">
+          <h2 id="education-title" class="section-title">Education</h2>
+          
+          <div class="education-item">
+            <div class="education-indicator"></div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3 class="education-school">Simon Fraser University</h3>
+                <p class="education-dates">2020 – 2026 (Expected)</p>
+              </div>
+              <div class="education-program">
+                <span class="education-icon">🎓</span>
+                B.S. Computer Science (Spec. Artificial Intelligence)
+              </div>
+              <p class="education-coursework">Relevant Coursework: Data Structures & Algorithms, Database Systems, Machine Learning (intro), Computer Vision, UI/ UX Design</p>
             </div>
           </div>
 
-          <div class="split__media">
-            <figure class="media-card">
-              <img
-                src="assets/education.svg"
-                width="720"
-                height="540"
-                alt="Abstract illustration representing education and learning"
-                loading="lazy"
-              />
-
-            </figure>
+          <div class="education-item">
+            <div class="education-indicator"></div>
+            <div class="education-content">
+              <div class="education-header">
+                <h3 class="education-school">Certifications</h3>
+              </div>
+              <div class="education-cert">
+                <span> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure" width="24" height="24"> Microsoft Azure AI Engineer (AI-102)</span> 
+                <span class="education-dates">May 2024</span>
+              </div>
+              <div class="education-cert">
+                <span> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Microsoft Azure" width="24" height="24"> Microsoft Azure AI Fundamentals (AI-900)</span>
+                <span class="education-dates">Aug 2023</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- ===================== -->
-    <!-- Photography Section   -->
-    <!-- ===================== -->
-    <section id="photography" class="section section--alt" aria-labelledby="photography-title">
-      <div class="container section__inner">
-        <!--
-          Photography layout:
-          - text centered on top
-          - images in a neat grid below
-        -->
-        <div class="stack reveal">
-          <header class="stack__header">
-            <h2 id="photography-title" class="section-title">Photography</h2>
-            <p class="stack__lead">
-              Photography helps me slow down and notice details—light, composition, and the tiny moments that make a
-              scene feel alive. Here are a few placeholders for shots I’ve taken.
-            </p>
-            <h6 class="stack__lead"><i>Click any thumbnail to view it larger.</i></h6>
-          </header>
-
-          <div class="gallery" aria-label="Photography gallery">
-            <a class="gallery__thumb" href="assets/photo-1.svg" data-lightbox="photo" aria-label="Open photo 1">
-              <img src="assets/photo-1.svg" alt="Placeholder landscape photo 1" loading="lazy" />
-            </a>
-            <a class="gallery__thumb" href="assets/photo-2.svg" data-lightbox="photo" aria-label="Open photo 2">
-              <img src="assets/photo-2.svg" alt="Placeholder landscape photo 2" loading="lazy" />
-            </a>
-            <a class="gallery__thumb" href="assets/photo-3.svg" data-lightbox="photo" aria-label="Open photo 3">
-              <img src="assets/photo-3.svg" alt="Placeholder street photo 3" loading="lazy" />
-            </a>
-            <a class="gallery__thumb" href="assets/photo-4.svg" data-lightbox="photo" aria-label="Open photo 4">
-              <img src="assets/photo-4.svg" alt="Placeholder portrait photo 4" loading="lazy" />
-            </a>
-            <a class="gallery__thumb" href="assets/photo-5.svg" data-lightbox="photo" aria-label="Open photo 5">
-              <img src="assets/photo-5.svg" alt="Placeholder city photo 5" loading="lazy" />
-            </a>
-            <a class="gallery__thumb" href="assets/photo-6.svg" data-lightbox="photo" aria-label="Open photo 6">
-              <img src="assets/photo-6.svg" alt="Placeholder film photo 6" loading="lazy" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ===================== -->
     <!-- My Cat Section        -->
@@ -394,49 +412,33 @@
           <div class="split__copy">
             <h2 id="cat-title" class="section-title">My Cat</h2>
             <p>
-              This is Mochi—my tiny coworker, professional napper, and the reason my commits sometimes have
-              suspiciously cat-shaped keyboard patterns.
+              Meet Biscuit, my curious and cozy companion who keeps work interesting.
             </p>
             <p>
-              Mochi has strong opinions about ergonomics (mostly: “laptop must be warm”) and will happily supervise
-              any debugging session as long as snacks are involved.
+              Biscuit became a programmer because he wanted to chase bugs in code.
             </p>
             <ul class="cat-facts">
-              <li><strong>Favorite activity:</strong> Inspecting boxes that are clearly too small.</li>
-              <li><strong>Best skill:</strong> Appearing the moment I sit down to focus.</li>
-              <li><strong>Team role:</strong> Morale + purring-based stress testing.</li>
+              <li><strong>Tech Stack:</strong> Scratch</li>
+              <li><strong>Favorite activity:</strong> Paw-cessing data… mostly treats</li>
+              <li><strong>Team role:</strong> Chief Purr-formance Specialist</li>
+              <li><strong>Cat Fact:</strong> Cats sleep for about 12–16 hours a day</li>
             </ul>
           </div>
 
           <div class="split__media">
             <figure class="media-card">
               <img
-                src="assets/cat.svg"
+                src="assets/cat.jpg"
                 width="720"
                 height="540"
                 alt="Friendly illustrated cat sitting next to a coffee mug"
                 loading="lazy"
               />
-              <figcaption class="media-caption">Mochi approves of clean code and consistent spacing.</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
-
-
-    <!-- ===================== -->
-    <!-- Lightbox Overlay      -->
-    <!-- (Used by Photography) -->
-    <!-- ===================== -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" aria-label="Expanded photo viewer" aria-modal="true" role="dialog">
-      <div class="lightbox__backdrop" data-lightbox-close></div>
-      <div class="lightbox__content" role="document">
-        <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close photo viewer">Close</button>
-        <img class="lightbox__image" src="" alt="" />
-      </div>
-    </div>
-  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
