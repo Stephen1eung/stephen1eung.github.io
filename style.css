@@ -219,7 +219,7 @@ a {
   align-items: center;
   justify-content: center;
   scroll-margin-top: calc(var(--header-height) + 24px);
-  padding: clamp(3rem, 5vw, 5rem) 0;
+  padding: 2rem 0;
 }
 
 .section:nth-of-type(even) {
