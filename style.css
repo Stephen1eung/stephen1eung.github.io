@@ -1,11 +1,10 @@
-/*
-  Minimalist, modern, clean design
-  - Soft neutral palette
-  - Plenty of whitespace
-  - Responsive split layout (text + image)
-  - Subtle scroll-reveal animation
-  - No frameworks, no external libraries
-*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --bg: #f7f7f5;
@@ -22,6 +21,14 @@
   --container: 1200px;
   --header-height: 72px;
   --gutter: clamp(5rem, 4vw, 3rem);
+  
+  /* Consistent padding values */
+  --padding-xs: 0.25rem;
+  --padding-sm: 0.5rem;
+  --padding-md: 1rem;
+  --padding-lg: 1.5rem;
+  --padding-xl: 2rem;
+  --padding-xxl: 3rem;
 
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
@@ -36,7 +43,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Garamond;
+  font-family: Garamond, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
@@ -144,7 +151,7 @@ a {
   color: var(--muted);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.5rem 0.25rem;
+  padding: var(--padding-sm) var(--padding-xs);
   border-radius: 3px;
   transition: color 180ms var(--ease), background 180ms var(--ease);
 }
@@ -161,7 +168,7 @@ a {
 .nav__link.nav__link--resume {
   color: #2563eb !important;
   border: 2px solid #2563eb;
-  padding: 0.35rem 0.75rem;
+  padding: 0.35rem var(--padding-sm);
   border-radius: 4px;
   font-weight: 600;
   line-height: 1;
@@ -191,11 +198,11 @@ a {
 
 .skip-link {
   position: absolute;
-  left: -999px;
   top: 12px;
+  left: -100%;
   background: var(--surface);
   color: var(--text);
-  padding: 0.75rem 1rem;
+  padding: var(--padding-sm) var(--padding-md);
   border-radius: 12px;
   border: 1px solid var(--border);
   z-index: 100;
@@ -219,7 +226,7 @@ a {
   align-items: center;
   justify-content: center;
   scroll-margin-top: calc(var(--header-height) + 24px);
-  padding: 2rem 0;
+  padding: var(--padding-xl) 0;
 }
 
 .section:nth-of-type(even) {
@@ -228,8 +235,8 @@ a {
 
 .section__inner {
   width: 100%;
-  padding-left: clamp(1.5rem, 6vw, 4rem);
-  padding-right: clamp(1.5rem, 6vw, 4rem);
+  padding-left: var(--padding-lg);
+  padding-right: var(--padding-lg);
 }
 
 .eyebrow {
@@ -294,7 +301,7 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 14px 40px rgba(17, 24, 39, 0.15), 0 0 20px rgba(37, 110, 235, 0.1);
-  padding: 1.25rem;
+  padding: var(--padding-lg);
 }
 
 .media-card img {
@@ -318,33 +325,32 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--padding-sm);
   padding: 0.85rem 1.1rem;
   border-radius: 4px;
   border: 2px solid #2563eb;
   background: rgba(37, 110, 235, 0.2);
-  color: #2563eb !important;
-  font-weight: 600;
+  color: #2563eb;
   text-decoration: none;
-  line-height: 1;
+  font-weight: 600;
   transition: color 180ms var(--ease), background 180ms var(--ease), border-color 180ms var(--ease);
 }
 
 .button:hover {
   background-color: #2563eb;
-  color: #ffffff !important;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .button--ghost {
-  background: transparent !important;
-  color: var(--text) !important;
-  border-color: var(--border) !important;
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
 }
 
 .button--ghost:hover {
-  background: rgba(17, 24, 39, 0.06) !important;
-  color: var(--text) !important;
+  background: rgba(17, 24, 39, 0.06);
+  color: var(--text);
 }
 
 /* About key points */
@@ -360,7 +366,7 @@ a {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1rem;
+  padding: var(--padding-md);
   box-shadow: var(--shadow);
 }
 
@@ -404,7 +410,7 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1rem;
+  padding: var(--padding-md);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -567,7 +573,7 @@ a {
   transform: translateX(-50%);
   background: var(--text);
   color: var(--surface);
-  padding: 0.25rem 0.5rem;
+  padding: var(--padding-xs) var(--padding-sm);
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -586,7 +592,7 @@ a {
   position: relative;
   display: grid;
   gap: 1.25rem;
-  padding: 1rem 0;
+  padding: var(--padding-md) 0;
 }
 
 /* Vertical line */
@@ -622,7 +628,7 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1rem;
+  padding: var(--padding-md);
   width: 520px;
   min-height: 120px;
   display: flex;
@@ -689,8 +695,6 @@ a {
   font-weight: 600;
 }
 
-
-/* Enhanced skill tags */
 .tag-row {
   list-style: none;
   padding: 0;
@@ -704,25 +708,14 @@ a {
   border: 1px solid var(--border);
   background: linear-gradient(135deg, rgba(37, 110, 235, 0.1) 0%, rgba(79, 159, 255, 0.15) 100%);
   border-radius: 8px;
-  padding: 0.2rem 0.5rem;
+  padding: var(--padding-xs) var(--padding-sm);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text);
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.tag-row li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(79, 159, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
 
 .tag-row li:hover {
   transform: translateY(-2px) scale(1.05);
@@ -840,8 +833,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.25rem 0;
-  padding: 0.25rem 0;
+  margin: var(--padding-xs) 0;
+  padding: var(--padding-xs) 0;
   border-bottom: 1px solid rgba(17, 24, 39, 0.08);
 }
 
@@ -870,14 +863,14 @@ a {
 }
 /* My Cat */
 .cat-facts {
-  margin: 1.25rem 0 0;
+  margin: var(--padding-lg) 0 0;
   padding-left: 1.1rem;
   color: var(--muted);
 }
 
 /* Footer */
 .site-footer {
-  padding: 2rem 0;
+  padding: var(--padding-xl) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -932,7 +925,7 @@ a {
   }
 
   .nav__link {
-    padding: 0.75rem 0.9rem;
+    padding: var(--padding-sm) var(--padding-md);
   }
 
   .gallery {
