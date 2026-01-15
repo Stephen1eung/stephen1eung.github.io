@@ -238,7 +238,7 @@ a {
   align-items: center;
   justify-content: center;
   scroll-margin-top: calc(var(--header-height) + 24px);
-  padding: var(--padding-xl) 0;
+  padding: 0;
 }
 
 .section:nth-of-type(even) {
@@ -247,8 +247,8 @@ a {
 
 .section__inner {
   width: 100%;
-  padding-left: var(--padding-lg);
-  padding-right: var(--padding-lg);
+  padding-left: var(--padding-md);
+  padding-right: var(--padding-md);
 }
 
 .eyebrow {
@@ -884,7 +884,7 @@ a {
 
 /* Footer */
 .site-footer {
-  padding: var(--padding-xl) 0;
+  padding: var(--padding-md) 0;
   border-top: 1px solid var(--border);
 }
 
