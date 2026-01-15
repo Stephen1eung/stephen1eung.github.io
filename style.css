@@ -25,7 +25,7 @@ html {
   --shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
 
   --container: 1440px;
-  --header-height: 130px;
+  --header-height: 90px;
   --gutter: clamp(2rem, 0vw, 0rem);
   
   /* Consistent font sizes */
@@ -111,12 +111,12 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   border: 2px solid #2563eb;
-  border-radius: 3px;
-  font-weight: 700;
-  font-size: 0.9rem;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1.5rem;
   color: #2563eb;
   text-decoration: none;
   transition: color 180ms var(--ease), background 180ms var(--ease), border-color 180ms var(--ease);
@@ -164,7 +164,7 @@ a {
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   padding: var(--padding-sm) var(--padding-xs);
   border-radius: 3px;
   transition: color 180ms var(--ease), background 180ms var(--ease);
@@ -185,6 +185,7 @@ a {
   padding: 0.35rem var(--padding-sm);
   border-radius: 4px;
   font-weight: 600;
+  font-size: 1.1rem;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -793,7 +794,7 @@ a {
 
 .education-item {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 1rem;
   margin-bottom: 2rem;
   text-align: left;
@@ -806,7 +807,6 @@ a {
   background: #2563eb;
   border: 2px solid #2563eb;
   flex-shrink: 0;
-  margin-top: 0.25rem;
 }
 
 .education-content {
