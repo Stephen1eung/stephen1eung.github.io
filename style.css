@@ -20,7 +20,7 @@
 
   --container: 1200px;
   --header-height: 72px;
-  --gutter: clamp(5rem, 4vw, 3rem);
+  --gutter: clamp(1.5rem, 6vw, 4rem);
   
   /* Consistent padding values */
   --padding-xs: 0.25rem;
