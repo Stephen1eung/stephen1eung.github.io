@@ -978,4 +978,15 @@ a {
   .gallery {
     grid-template-columns: 1fr;
   }
+
+  /* Additional mobile fix for very small screens */
+  #education.section {
+    padding: var(--padding-md) 0;
+    margin-top: 0;
+  }
+
+  #my-cat.section {
+    padding: var(--padding-md) 0;
+    margin-top: 0;
+  }
 }
