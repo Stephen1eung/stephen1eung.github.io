@@ -250,11 +250,13 @@ a {
 #education.section {
   padding: 0;
   margin-top: -10rem;
+  min-height: calc(100vh - var(--header-height) - 10rem);
 }
 
 #my-cat.section {
   padding: 0;
   margin-top: -15rem;
+  min-height: calc(100vh - var(--header-height) - 15rem);
 }
 
 .section__inner {
@@ -964,13 +966,15 @@ a {
 
   /* Fix Education and My Cat sections for mobile */
   #education.section {
-    padding: var(--padding-lg) 0;
-    margin-top: 0;
+    padding: var(--padding-lg) 0 !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
   }
 
   #my-cat.section {
-    padding: var(--padding-lg) 0;
-    margin-top: 0;
+    padding: var(--padding-lg) 0 !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
   }
 }
 
@@ -981,12 +985,14 @@ a {
 
   /* Additional mobile fix for very small screens */
   #education.section {
-    padding: var(--padding-md) 0;
-    margin-top: 0;
+    padding: var(--padding-md) 0 !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
   }
 
   #my-cat.section {
-    padding: var(--padding-md) 0;
-    margin-top: 0;
+    padding: var(--padding-md) 0 !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
   }
 }
