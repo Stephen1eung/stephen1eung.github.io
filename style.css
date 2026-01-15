@@ -26,7 +26,7 @@ html {
 
   --container: 1440px;
   --header-height: 130px;
-  --gutter: clamp(2.7rem, 10.8vw, 7.2rem);
+  --gutter: clamp(2rem, 0vw, 0rem);
   
   /* Consistent font sizes */
   --base-font-size: 20px;
@@ -120,14 +120,12 @@ a {
   color: #2563eb;
   text-decoration: none;
   transition: color 180ms var(--ease), background 180ms var(--ease), border-color 180ms var(--ease);
-  margin-left: -5rem;
 }
 
 .nav {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: -5rem;
 }
 
 .nav__toggle {
