@@ -247,6 +247,16 @@ a {
   background: rgba(255, 255, 255, 0.55);
 }
 
+#education.section {
+  padding: 0;
+  margin-top: -10rem;
+}
+
+#my-cat.section {
+  padding: 0;
+  margin-top: -10rem;
+}
+
 .section__inner {
   width: 100%;
   padding-left: var(--padding-md);
@@ -899,18 +909,6 @@ a {
   font-weight: 600;
 }
 
-@media (min-width: 901px) {
-  #education.section {
-    padding: 0;
-    margin-top: -10rem;
-  }
-
-  #my-cat.section {
-    padding: 0;
-    margin-top: -15rem;
-  }
-}
-
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .split,
@@ -965,12 +963,14 @@ a {
   }
 
   /* Fix Education and My Cat sections for mobile */
-  #education.section,
+  #education.section {
+    padding: var(--padding-lg) 0;
+    margin-top: 0;
+  }
+
   #my-cat.section {
     padding: var(--padding-lg) 0;
     margin-top: 0;
-    min-height: auto;
-    align-items: flex-start;
   }
 }
 
