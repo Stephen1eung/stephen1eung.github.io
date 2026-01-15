@@ -21,24 +21,24 @@ html {
   --accent: #1f6feb;
   --accent-ink: #0b1220;
 
-  --radius: 16px;
-  --shadow: 0 14px 40px rgba(17, 24, 39, 0.10);
+  --radius: 20px;
+  --shadow: 0 18px 50px rgba(17, 24, 39, 0.12);
 
-  --container: 1200px;
-  --header-height: 72px;
-  --gutter: clamp(1.5rem, 6vw, 4rem);
+  --container: 1440px;
+  --header-height: 130px;
+  --gutter: clamp(2.7rem, 10.8vw, 7.2rem);
   
   /* Consistent font sizes */
-  --base-font-size: 16px;
+  --base-font-size: 20px;
   --font-scale: 1.0625;
   
-  /* Consistent padding values */
-  --padding-xs: 0.25rem;
-  --padding-sm: 0.5rem;
-  --padding-md: 1rem;
-  --padding-lg: 1.5rem;
-  --padding-xl: 2rem;
-  --padding-xxl: 3rem;
+  /* Consistent padding values scaled for larger size */
+  --padding-xs: 0.45rem;
+  --padding-sm: 0.9rem;
+  --padding-md: 1.8rem;
+  --padding-lg: 2.7rem;
+  --padding-xl: 3.6rem;
+  --padding-xxl: 5.4rem;
 
   --ease: cubic-bezier(.2, .8, .2, 1);
 }
@@ -98,6 +98,7 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+
 .header-inner {
   height: 100%;
   display: flex;
@@ -119,11 +120,14 @@ a {
   color: #2563eb;
   text-decoration: none;
   transition: color 180ms var(--ease), background 180ms var(--ease), border-color 180ms var(--ease);
+  margin-left: -5rem;
 }
 
 .nav {
   display: flex;
   align-items: center;
+  margin-left: auto;
+  margin-right: -5rem;
 }
 
 .nav__toggle {
@@ -238,11 +242,21 @@ a {
   align-items: center;
   justify-content: center;
   scroll-margin-top: calc(var(--header-height) + 24px);
-  padding: 0;
+  padding: var(--padding-lg) 0;
 }
 
 .section:nth-of-type(even) {
   background: rgba(255, 255, 255, 0.55);
+}
+
+#education.section {
+  padding: 0;
+  margin-top: -10rem;
+}
+
+#my-cat.section {
+  padding: 0;
+  margin-top: -15rem;
 }
 
 .section__inner {
@@ -252,32 +266,32 @@ a {
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.35rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: max(0.8rem, 12px);
+  font-size: max(0.96rem, 14.4px);
   color: var(--muted);
 }
 
 .headline {
-  margin: 0 0 1rem;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin: 0 0 1.8rem;
+  font-size: clamp(2.7rem, 6vw, 4.2rem);
   line-height: 1.05;
   min-height: 1.2em;
 }
 
 .section-title {
-  margin: 0 0 1rem;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin: 0 0 1.8rem;
+  font-size: clamp(2.16rem, 3.6vw, 2.88rem);
   line-height: 1.15;
   min-height: 1.2em;
 }
 
 .subhead {
-  margin: 0 0 1.75rem;
+  margin: 0 0 3.15rem;
   color: var(--muted);
-  font-size: max(1.05rem, 16px);
+  font-size: max(1.26rem, 19.2px);
   max-width: 60ch;
 }
 
@@ -643,7 +657,7 @@ a {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--padding-md);
-  width: 520px;
+  width: 640px;
   min-height: 120px;
   display: flex;
   flex-direction: column;
@@ -682,14 +696,14 @@ a {
 
 .timeline__title {
   margin: 0 0 0.1rem;
-  font-size: 1.1rem;
+  font-size: 1.32rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .timeline__title span:last-child {
-  font-size: 0.85rem;
+  font-size: 1.02rem;
   font-weight: 700;
   opacity: 1;
 }
@@ -698,7 +712,7 @@ a {
   margin: 0 0 0.1rem;
   color: var(--muted);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.14rem;
 }
 
 .timeline__body {
@@ -707,6 +721,7 @@ a {
   flex-grow: 1;
   text-align: right;
   font-weight: 600;
+  font-size: 1.26rem;
 }
 
 .tag-row {
@@ -724,7 +739,7 @@ a {
   border-radius: 8px;
   padding: var(--padding-xs) var(--padding-sm);
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -810,7 +825,7 @@ a {
 .education-school {
   margin: 0;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.584rem;
   color: var(--text);
 }
 
@@ -818,7 +833,7 @@ a {
   margin: 0;
   color: var(--muted);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1.296rem;
 }
 
 .education-program {
@@ -827,7 +842,7 @@ a {
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1.368rem;
   font-weight: 500;
 }
 
@@ -838,7 +853,7 @@ a {
 .education-coursework {
   margin: 0;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 1.224rem;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -862,6 +877,7 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 1.296rem;
 }
 
 .education-cert img {
@@ -873,14 +889,16 @@ a {
 .education-cert span:last-child {
   font-weight: 400;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1.296rem;
 }
 /* My Cat */
 .cat-facts {
   margin: var(--padding-lg) 0 0;
   padding-left: 1.1rem;
   color: var(--muted);
+  font-size: 1.26rem;
 }
+
 
 /* Footer */
 .site-footer {
