@@ -961,6 +961,17 @@ a {
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Fix Education and My Cat sections for mobile */
+  #education.section {
+    padding: var(--padding-lg) 0;
+    margin-top: 0;
+  }
+
+  #my-cat.section {
+    padding: var(--padding-lg) 0;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 520px) {
