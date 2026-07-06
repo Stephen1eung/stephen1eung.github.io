@@ -658,7 +658,7 @@ a {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--padding-md);
-  width: 100%;
+  width: calc(100% - 2.25rem);
   max-width: 640px;
   min-height: 120px;
   display: flex;
@@ -688,15 +688,13 @@ a {
 
 /* Small horizontal connector line to the card */
 .timeline__item:nth-child(odd) .timeline__card {
-  justify-self: stretch;
-  margin-left: 0;
-  margin-right: 0;
+  justify-self: end;
+  margin-right: 2.25rem;
 }
 
 .timeline__item:nth-child(even) .timeline__card {
-  justify-self: stretch;
-  margin-left: 0;
-  margin-right: 0;
+  justify-self: start;
+  margin-left: 2.25rem;
 }
 
 .timeline__title {
@@ -787,11 +785,6 @@ a {
     width: 100%;
     min-width: 0;
   }
-    .timeline__title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
-  }
 
   .timeline__item:nth-child(odd) .timeline__card,
   .timeline__item:nth-child(even) .timeline__card {
@@ -805,7 +798,7 @@ a {
     align-items: flex-start;
     gap: 0.15rem;
   }
-  
+
   .timeline__body {
     text-align: left;
   }
